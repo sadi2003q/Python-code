@@ -25,7 +25,7 @@ class LinkedList:
     def deletenode(self, data):
         if self.head is None:
             print("list is empty")
-        elif self.head.data == data :
+        elif self.head.data == data:
             node = self.head
             self.head = self.head.next
             del node
@@ -40,6 +40,43 @@ class LinkedList:
                 else:
                     currentNode = currentNode.next
 
+    def reverse(self):
+        if self.head is None:
+            print('List is empty')
+        elif self.head.next is None:
+            return
+        else:
+            previous = None
+            current = self.head
+
+            while current is not None:
+                next = current.next
+
+                current.next = previous
+                previous = current
+
+                current = next
+            self.head = previous
+
+    def swapPair(self):
+        if self.head is None or self.head.next is None:
+            return
+        else:
+            dummy = Node(self.head, 0)
+            dummy.next =self.head
+            previous = dummy
+
+            while previous.next is not None and previous.next.next is not None:
+                first = previous.next
+                second = previous.next.next
+
+                previous.next = second
+                first.next = second.next
+                second.next = first
+
+                previous = first
+            self.head = dummy.next
+
     def printlist(self):
         if self.head is None:
             print("list is empty")
@@ -50,16 +87,20 @@ class LinkedList:
                 node = node.next
 
 
-
-
-
 list = LinkedList()
 for i in range(21):
     list.addtotail(i)
 print("before deleting")
 list.printlist()
 
+# print("After deleting")
+# list.deletenode(13)
+# list.printlist()
 
-print("After deleting")
-list.deletenode(13)
+
+# print("reverse linked List")
+# list.reverse()
+# list.printlist()
+print('\n\nafter deleting')
+list.swapPair()
 list.printlist()
