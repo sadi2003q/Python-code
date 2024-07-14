@@ -23,6 +23,6 @@ class Model_Training:
     def run(self):
         self.Splitting()
         if self.reg:
-            return Regression(self.test_y, self.prediction)
+            return Regression(self.model, self.test_y, self.prediction)
         else:
-            return ClassificationMetrics(self.test_y, self.prediction)
+            return ClassificationMetrics(self.model, self.test_y, self.prediction)
