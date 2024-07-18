@@ -1,11 +1,9 @@
-# %%
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, \
     classification_report
 from sklearn.model_selection import cross_val_score
 
 
-# %%
 class ClassificationMetrics:
     def __init__(self, model, Y_test, Y_prediction, cv=10):
         self.cv = cv
@@ -14,7 +12,6 @@ class ClassificationMetrics:
         self.Y_prediction = Y_prediction
 
     def get_score(self):
-
         metrics = {
             'Accuracy': accuracy_score(self.Y_test, self.Y_prediction),
             'Precision': precision_score(self.Y_test, self.Y_prediction, average='weighted'),
@@ -29,3 +26,4 @@ class ClassificationMetrics:
     def get_classification_report(self):
         report_dict = classification_report(self.Y_test, self.Y_prediction, output_dict=True)
         return pd.DataFrame(report_dict).transpose()
+
