@@ -15,7 +15,7 @@ df.tail(2) # will show first 2 rows of the Dataset
 
 #print(pd.read_csv('simple.csv')) # read exel file
 
-sadi = pd.read_csv('../Pandas/simple.csv')
+sadi = pd.read_csv('../Machine Learning Lession/simple.csv')
 
 
 print(sadi['name'][6]) # printing simple column ['row name'] printing specific value of the column ['column name'][row number]
