@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split as split
-from Pandas.Machine_Learning.Classification_Regressor import Regression
-from Pandas.Machine_Learning.Classification_Logistic import ClassificationMetrics
+from Machine_Learning.Classification_Regressor import Regression
+from Machine_Learning.Classification_Logistic import ClassificationMetrics
 
 
 class Model_Training:

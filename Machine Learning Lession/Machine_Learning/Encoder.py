@@ -32,6 +32,8 @@ class Encoder:
         self.x = x
         self.y = y
 
+        self.transformed_flag = False
+
     def encode(self):
         self.transform()
         if self.label_code:
@@ -46,7 +48,15 @@ class Encoder:
             ('onehot', OneHotEncoder(drop='first', sparse_output=False), self.onehot_code)
         ], remainder='passthrough')
         self.x = transformer.fit_transform(self.x)
+        self.transformed_flag = True
 
     def label_transform(self):
         label_encoder = LabelEncoder()
         self.y = label_encoder.fit_transform(self.y)
+
+    def get_train_x(self):
+        if self.transformed_flag:
+            return self.x
+        else:
+            self.transform()
+            return self.x

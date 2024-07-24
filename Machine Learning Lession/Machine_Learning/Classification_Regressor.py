@@ -22,7 +22,8 @@ class Regression:
             "r2_score": r2,
             "mean_absolute_error": mean_square,
             "mean_squared_error": mean_absolute,
-            "cross_val_score": cross_val_score(self, self.train_x, self.train_y, cv=self.cv, scoring='accuracy')
+            "cross_val_score": np.mean(cross_val_score(self.model, self.train_x, self.train_y, cv=self.cv,
+                                                       scoring='r2'))
         }
 
         return pd.DataFrame([metrics])
