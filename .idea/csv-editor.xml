@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Machine Learning Lession/All_CSV/Submission.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Machine Learning Lession/All_CSV/avocado.csv">
           <value>
             <Attribute>
@@ -74,6 +81,13 @@
           </value>
         </entry>
         <entry key="/Machine Learning Lession/All_CSV/heart.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Machine Learning Lession/All_CSV/lifeExpectancy.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
